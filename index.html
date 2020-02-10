@@ -91,23 +91,23 @@
     <section class="promo">
       <h2 class="visually-hidden">Промо-блоки товаров</h2>
       <ul class="promo-cards" aria-label="Промо-блоки товаров">
-        <li class="promo-cards__item">
+        <li class="promo-cards__item promo-cards__item--materials">
           <h2 class="promo-cards__title">Материалы</h2>
           <a href="#" class="promo-cards__button">На любой вкус</a>
         </li>
-        <li class="promo-cards__item">
+        <li class="promo-cards__item promo-cards__item--instruments">
           <h2 class="promo-cards__title">Инструмент</h2>
           <a href="#" class="promo-cards__button">На все случаи</a>
         </li>
-        <li class="promo-cards__item">
+        <li class="promo-cards__item promo-cards__item--technics">
           <h2 class="promo-cards__title">Техника</h2>
           <a href="#" class="promo-cards__button">Для стройки</a>
         </li>
-        <li class="promo-cards__item">
+        <li class="promo-cards__item promo-cards__item--discounts">
           <h2 class="promo-cards__title">Скидки 50%</h2>
           <a href="#" class="promo-cards__button">На 350 товаров</a>
         </li>
-        <li class="promo-cards__item">
+        <li class="promo-cards__item promo-cards__item--delivery">
           <h2 class="promo-cards__title">Доставка</h2>
           <a href="#" class="promo-cards__button">Бесплатно</a>
         </li>
@@ -152,7 +152,7 @@
       <h2 class="products__title">Популярные товары:</h2>
       <a href="#" class="products__button">Все популярные товары</a>
       <ul class="products-list">
-        <li class="products-list__item">
+        <li class="products-list__item" tabindex="0">
           <a href="#" class="products-list__image-link">
             <img src="img/bosch_bfg_9000.jpg" class="products-list__image" width="218" height="170"
               alt="Перфоратор BOSCH BFG 9000">
@@ -170,7 +170,7 @@
           <span class="products-list__price products-list__price--old">32500 &#8381;</span>
           <span class="products-list__price">25500 &#8381;</span>
         </li>
-        <li class="products-list__item">
+        <li class="products-list__item" tabindex="0">
           <a href="#" class="products-list__image-link">
             <img src="img/bosch_bfg_3000.jpg" class="products-list__image" width="218" height="170"
               alt="Перфоратор BOSCH BFG 3000">
@@ -188,7 +188,7 @@
           <span class="products-list__price products-list__price--old">22500 &#8381;</span>
           <span class="products-list__price">15500 &#8381;</span>
         </li>
-        <li class="products-list__item">
+        <li class="products-list__item" tabindex="0">
           <a href="#" class="products-list__image-link">
             <img src="img/bosch_bfg_6000.jpg" class="products-list__image" width="218" height="170"
               alt="Перфоратор BOSCH BFG 6000">
@@ -206,17 +206,17 @@
           <span class="products-list__price products-list__price--old">30500 &#8381;</span>
           <span class="products-list__price">25500 &#8381;</span>
         </li>
-        <li class="products-list__item">
-          <a href="#" class="products-list__image-link">
+        <li class="products-list__item" tabindex="0">
+        <a href="#" class="products-list__image-link">
             <img src="img/bosch_bfg_2000.jpg" class="products-list__image" width="218" height="170"
               alt="Перфоратор BOSCH BFG 2000">
           </a>
 
-          <a href="#" class="products-list__button products-list__button--buy">Купить</a>
-          <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+          <a href="#" class="products-list__button products-list__button--buy ">Купить</a>
+          <a href="#" class="products-list__button products-list__button--to-bookmarks  ">В закладки</a>
 
           <h3 class="products-list__product-title">
-            <a href="#" class="products-list__product-link">
+        <a href="#" class="products-list__product-link">
               <p class="products-list__product-name">Перфоратор BOSCH BFG 2000</p>
             </a>
           </h3>
@@ -277,13 +277,13 @@
         Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
       <ul class="services-list">
         <li class="service-list__item">
-          <button type="button">Доставка</button>
+          <button type="button" class="services-list__button services-list__button--active">Доставка</button>
         </li>
         <li class="service-list__item">
-          <button type="button">Гарантия</button>
+          <button type="button" class="services-list__button">Гарантия</button>
         </li>
         <li class="service-list__item">
-          <button type="button">Кредит</button>
+          <button type="button" class="services-list__button">Кредит</button>
         </li>
       </ul>
       <ul class="services-description">
@@ -399,7 +399,7 @@
     </section>
   </footer>
 
-  <section class="modal modal--contact-us">
+  <section class="modal modal--contact-us is-hidden">
     <form method="POST" action="" class="contact-us-form">
       <p class="contact-us-form__item">
         <label for="contact-us-form__username" class="contact-us-form__username-label">Ваше имя:</label>
@@ -408,26 +408,27 @@
       <p class="contact-us-form__item">
         <label for="contact-us-form__email" class="contact-us-form__email-label">Ваш email:</label>
         <input type="email" id="contact-us-form__email" name="contact-us-form__email" placeholder="email@example.com"
-          required>
+          class="contact-us-form__email" required>
       </p>
       <p class="contact-us-form__item">
-        <label for="contact-us-form__comment"
-          class="contact-us-form__comment-label">Текст письма</label>
+        <label for="contact-us-form__comment" class="contact-us-form__comment-label">Текст письма</label>
         <textarea name="contact-us-form__comment" id="contact-us-form__comment" class="contact-us-form__comment"
           cols="30" rows="10" placeholder="В свободной форме" required></textarea>
       </p>
       <button type="submit" class="contact-us-form__button contact-us-form__button--submit">Отправить</button>
     </form>
-    <button type="button" class="modal_button modal__button--close"><span class="visually-hidden">Закрыть
-        окно</span>X</button>
+    <button type="button" class="modal__button modal__button--close">
+      <img src="img/popup-close.svg" alt="Закрыть окно">
+    </button>
   </section>
 
-  <section class="modal modal--our-location">
+  <section class="modal modal--our-location is-hidden">
     <h2 class="modal__title visually-hidden">Как до нас добраться</h2>
     <img src="img/map-popup.png" class="modal__map-image"
       alt="Мы находимся по адресу: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8">
-    <button type="button" class="modal_button modal__button--close"><span class="visually-hidden">Закрыть
-        окно</span>X</button>
+    <button type="button" class="modal_button modal__button--close">
+      <img src="img/popup-close.svg" alt="Закрыть окно">
+    </button>
   </section>
 </body>
 
