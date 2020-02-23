@@ -15,14 +15,21 @@
   <header class="page-header">
     <section class="header-top">
       <div class="wrapper">
-        <div class="container">
+        <div class="container container--header-top">
           <a href="index.html" class="main-logo">
             <img src="img/Technomart-logo.svg" class="main-logo__img" width="109" height="18" alt="Логотип Техномарт. Интернет-магазин
           строительных материалов и инструментов для ремонта">
           </a>
           <form action="POST" class="search-form">
-            <input type="search" name="search-form__input" id="search-form__input" class="search-form__input"
+            <input type="search" name="search-form__input" id="search-text" class="search-form__input"
               placeholder="Поиск:">
+            <label for="search-text" class="search-form__label">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17">
+                <path class="search-form__icon" fill="#231F20" d="M17 15.586l-3.542-3.542A7.465 7.465 0 0015 7.5 7.5 7.5 0 107.5
+                   15c1.71 0 3.282-.579 4.544-1.542L15.586 17 17 15.586zM2 7.5C2 4.467
+                    4.467 2 7.5 2 10.532 2 13 4.467 13 7.5c0 3.032-2.468 5.5-5.5 5.5A5.506 5.506 0 012 7.5z" />
+              </svg>
+            </label>
             <button type="submit" class="search-form__button search-form__button--submit visually-hidden"></button>
           </form>
           <ul class="top-menu">
@@ -55,14 +62,28 @@
         </div>
         <ul class="login-panel">
           <li class="login-panel__item">
-            <a href="#" class="login-panel__button login-panel__button--sign-in">Войти</a>
+            <a href="#" class="login-panel__button login-panel__button--sign-in">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="17px" fill="#000000">
+                <g>
+                  <polygon points="14.875,8.5 6,0 6,6 0,6 0,11 6,11 6,17 	" />
+                </g>
+                <path d="M16.986,15.01h-5.027V17h5.027c2.178,0,3.004-1.81,3.029-3.026V3.028C19.99,
+                1.811,19.164,0,16.986,0h-5.027v1.99h5.027c0.839,0,0.992,0.681,
+                1.01,1.057v10.904C17.979,14.327,17.825,15.01,16.986,15.01z" />
+              </svg>
+              <span class="login-panel__button-label">Войти</span>
+            </a>
           </li>
           <li class="login-panel__item">
             <a href="#" class="login-panel__button login-panel__button--sign-up">Регистрация</a>
           </li>
           <li class="login-panel__item is-hidden">
-            <span class="login-panel__username">Равшан Джамшутович</span>
-            <button type="button" class="login-panel__button login-panel__button--logout">Выход</button>
+            <button type="button" class="login-panel__button login-panel__button--logout">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="#C5C5C5">
+                <path d="M17.881 14.166c-2.144-.735-4.256-1.666-5.207-2.39-.657-.501-.77-1.618-.517-2.415
+                 1.118-.903 1.864-2.477 1.864-4.278C14.021 2.276 12.221 0 10 0S5.979 2.276 5.979 5.083c0 1.801.746 3.374 1.863 4.277.253.798.141 1.915-.517 2.416-.95.724-3.063 1.654-5.207
+                  2.39S0 18 0 18h20s.025-3.099-2.119-3.834z" />
+              </svg>Равшан Джамшутович </button>
           </li>
           <li class="login-panel__item is-hidden">
             <a href="#" class="login-panel__button login-panel__button--orders">Мои заказы</a>
@@ -182,13 +203,15 @@
         </div>
         <ul class="products-list">
           <li class="products-list__item" tabindex="0">
-            <a href="#" class="products-list__image-link">
+            <div class="products-list__image-link">
               <img src="img/bosch_bfg_9000.jpg" class="products-list__image" width="218" height="170"
                 alt="Перфоратор BOSCH BFG 9000">
-            </a>
+            </div>
 
-            <a href="#" class="products-list__button products-list__button--buy">Купить</a>
-            <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+            <div class="products-list__button-group">
+              <a href="#" class="products-list__button products-list__button--buy">Купить</a>
+              <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+            </div>
 
             <h3 class="products-list__product-title">
               <a href="#" class="products-list__product-link">
@@ -200,13 +223,15 @@
             <span class="products-list__price">25500 &#8381;</span>
           </li>
           <li class="products-list__item" tabindex="0">
-            <a href="#" class="products-list__image-link">
+            <div class="products-list__image-link">
               <img src="img/bosch_bfg_3000.jpg" class="products-list__image" width="218" height="170"
                 alt="Перфоратор BOSCH BFG 3000">
-            </a>
+            </div>
 
-            <a href="#" class="products-list__button products-list__button--buy">Купить</a>
-            <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+            <div class="products-list__button-group">
+              <a href="#" class="products-list__button products-list__button--buy">Купить</a>
+              <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+            </div>
 
             <h3 class="products-list__product-title">
               <a href="#" class="products-list__product-link">
@@ -218,13 +243,15 @@
             <span class="products-list__price">15500 &#8381;</span>
           </li>
           <li class="products-list__item" tabindex="0">
-            <a href="#" class="products-list__image-link">
+            <div class="products-list__image-link">
               <img src="img/bosch_bfg_6000.jpg" class="products-list__image" width="218" height="170"
                 alt="Перфоратор BOSCH BFG 6000">
-            </a>
+            </div>
 
-            <a href="#" class="products-list__button products-list__button--buy">Купить</a>
-            <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+            <div class="products-list__button-group">
+              <a href="#" class="products-list__button products-list__button--buy">Купить</a>
+              <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+            </div>
 
             <h3 class="products-list__product-title">
               <a href="#" class="products-list__product-link">
@@ -235,14 +262,16 @@
             <span class="products-list__price products-list__price--old">30500 &#8381;</span>
             <span class="products-list__price">25500 &#8381;</span>
           </li>
-          <li class="products-list__item" tabindex="0">
-            <a href="#" class="products-list__image-link">
+          <li class="products-list__item products-list__item--new" tabindex="0">
+            <div class="products-list__image-link">
               <img src="img/bosch_bfg_2000.jpg" class="products-list__image" width="218" height="170"
                 alt="Перфоратор BOSCH BFG 2000">
-            </a>
+            </div>
 
-            <a href="#" class="products-list__button products-list__button--buy ">Купить</a>
-            <a href="#" class="products-list__button products-list__button--to-bookmarks  ">В закладки</a>
+            <div class="products-list__button-group">
+              <a href="#" class="products-list__button products-list__button--buy">Купить</a>
+              <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+            </div>
 
             <h3 class="products-list__product-title">
               <a href="#" class="products-list__product-link">
@@ -250,7 +279,7 @@
               </a>
             </h3>
 
-            <span class="products-list__price products-list__price--old is-hidden">12500 &#8381;</span>
+            <span class="products-list__price products-list__price--old"></span>
             <span class="products-list__price">12500 &#8381;</span>
           </li>
       </section>
@@ -355,7 +384,8 @@
           <p class="about-company__text">Настоящий мужской шоппинг начинается здесь!
             Огромный выбор товаров для ремонта и <br> строительства не оставит равнодушными любителей
             сэкономить на гастарбайтерах.</p>
-          <p class="about-company__text about-company__text--last">Мы можем доставить ваш товар в самые отдаленные точки России! <br>
+          <p class="about-company__text about-company__text--last">Мы можем доставить ваш товар в самые отдаленные точки
+            России! <br>
             Техномарт работает со многими транспортными компаниями: </p>
           <ul class="delivers-list">
             <li class="delivers-list__item">Деловые линии</li>
@@ -448,22 +478,24 @@
     </section>
   </footer>
 
-  <section class="modal modal--contact-us is-hidden">
+  <section class="modal modal--contact-us" hidden>
     <form method="POST" action="" class="contact-us-form">
-      <p class="contact-us-form__item">
-        <label for="contact-us-form__username" class="contact-us-form__username-label">Ваше имя:</label>
-        <input type="text" id="contact-us-form__username" name="contact-us-form__username" placeholder="Имя Фамилия"
-          class="contact-us-form__username" required></p>
-      <p class="contact-us-form__item">
-        <label for="contact-us-form__email" class="contact-us-form__email-label">Ваш email:</label>
-        <input type="email" id="contact-us-form__email" name="contact-us-form__email" placeholder="email@example.com"
-          class="contact-us-form__email" required>
-      </p>
-      <p class="contact-us-form__item">
-        <label for="contact-us-form__comment" class="contact-us-form__comment-label">Текст письма</label>
-        <textarea name="contact-us-form__comment" id="contact-us-form__comment" class="contact-us-form__comment"
-          cols="30" rows="10" placeholder="В свободной форме" required></textarea>
-      </p>
+      <div class="contact-us-form__group">
+        <p class="contact-us-form__item">
+          <label for="contact-us-form__username" class="contact-us-form__username-label">Ваше имя:</label>
+          <input type="text" id="contact-us-form__username" name="contact-us-form__username" placeholder="Имя Фамилия"
+            class="contact-us-form__username" required></p>
+        <p class="contact-us-form__item">
+          <label for="contact-us-form__email" class="contact-us-form__email-label">Ваш email:</label>
+          <input type="email" id="contact-us-form__email" name="contact-us-form__email" placeholder="email@example.com"
+            class="contact-us-form__email" required>
+        </p>
+        <p class="contact-us-form__item">
+          <label for="contact-us-form__comment" class="contact-us-form__comment-label">Текст письма:</label>
+          <textarea name="contact-us-form__comment" id="contact-us-form__comment" class="contact-us-form__comment"
+            cols="30" rows="10" placeholder="В свободной форме" required></textarea>
+        </p>
+      </div>
       <button type="submit" class="contact-us-form__button contact-us-form__button--submit">Отправить</button>
     </form>
     <button type="button" class="modal__button modal__button--close">
@@ -471,9 +503,9 @@
     </button>
   </section>
 
-  <section class="modal modal--our-location is-hidden">
+  <section class="modal modal--our-location" hidden>
     <h2 class="modal__title visually-hidden">Как до нас добраться</h2>
-    <img src="img/map-popup.png" class="modal__map-image"
+    <img src="img/map-popup.png" class="modal__map-image" width="940" height="446"
       alt="Мы находимся по адресу: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8">
     <button type="button" class="modal_button modal__button--close">
       <img src="img/popup-close.svg" alt="Закрыть окно">

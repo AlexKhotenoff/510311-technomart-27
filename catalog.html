@@ -14,31 +14,40 @@
 <body>
   <header class="page-header">
     <section class="header-top">
-      <div class="wrapper container">
-        <a href="index.html" class="main-logo">
-          <img src="img/Technomart-logo.svg" class="main-logo__img" width="109" height="18" alt="Логотип Техномарт. Интернет-магазин
+      <div class="wrapper">
+        <div class="container container--header-top">
+          <a href="index.html" class="main-logo">
+            <img src="img/Technomart-logo.svg" class="main-logo__img" width="109" height="18" alt="Логотип Техномарт. Интернет-магазин
           строительных материалов и инструментов для ремонта">
-        </a>
-        <form action="POST" class="search-form">
-          <input type="search" name="search-form__input" id="search-form__input" class="search-form__input"
-            placeholder="Поиск:">
-          <button type="submit" class="search-form__button search-form__button--submit visually-hidden"></button>
-        </form>
-        <ul class="top-menu">
-          <li class="top-menu__item">
-            <a href="#" class="top-menu__link top-menu__link--bookmarks">Закладки:
-              <span class="top-menu__count">0</span>
-            </a>
-          </li>
-          <li class="top-menu__item">
-            <a href="#" class="top-menu__link top-menu__link--cart top-menu__link--cart-not-empty">Корзина:
-              <span class="top-menu__count">10</span>
-            </a>
-          </li>
-          <li class="top-menu__item">
-            <a href="#" class="top-menu__link top-menu__link--order">Оформить заказ</a>
-          </li>
-        </ul>
+          </a>
+          <form action="POST" class="search-form">
+            <input type="search" name="search-form__input" id="search-text" class="search-form__input"
+              placeholder="Поиск:">
+            <label for="search-text" class="search-form__label">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17">
+                <path class="search-form__icon" fill="#231F20" d="M17 15.586l-3.542-3.542A7.465 7.465 0 0015 7.5 7.5 7.5 0 107.5
+                   15c1.71 0 3.282-.579 4.544-1.542L15.586 17 17 15.586zM2 7.5C2 4.467
+                    4.467 2 7.5 2 10.532 2 13 4.467 13 7.5c0 3.032-2.468 5.5-5.5 5.5A5.506 5.506 0 012 7.5z" />
+              </svg>
+            </label>
+            <button type="submit" class="search-form__button search-form__button--submit visually-hidden"></button>
+          </form>
+          <ul class="top-menu">
+            <li class="top-menu__item">
+              <a href="#" class="top-menu__link top-menu__link--bookmarks">Закладки:
+                <span class="top-menu__count">0</span>
+              </a>
+            </li>
+            <li class="top-menu__item">
+              <a href="#" class="top-menu__link top-menu__link--cart top-menu__link--cart-not-empty">Корзина:
+                <span class="top-menu__count">10</span>
+              </a>
+            </li>
+            <li class="top-menu__item">
+              <a href="#" class="top-menu__link top-menu__link--order">Оформить заказ</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
     <div class="wrapper">
@@ -52,16 +61,28 @@
           <p class="page-header__header-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
         </div>
         <ul class="login-panel">
-          <li class="login-panel__item is-hidden">
-            <a href="#" class="login-panel__button login-panel__button--sign-in">Войти</a>
-          </li>
-          <li class="login-panel__item is-hidden">
-            <a href="#" class="login-panel__button login-panel__button--sign-up">Регистрация</a>
-          </li>
           <li class="login-panel__item">
-            <button type="button" class="login-panel__button login-panel__button--logout">Равшан Джамшутович</button>
+            <div class=".login-panel__logout-group">
+              <a href="#" class="login-panel__button login-panel__button--logout">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" class="login-panel__user-icon">
+                  <path fill="#C5C5C5" d="M17.881 14.166c-2.144-.735-4.256-1.666-5.207-2.39-.657-.501-.77-1.618-.517-2.415
+               1.118-.903 1.864-2.477 1.864-4.278C14.021 2.276 12.221 0 10 0S5.979 2.276 5.979 5.083c0 1.801.746 3.374 1.863 4.277.253.798.141 1.915-.517 2.416-.95.724-3.063 1.654-5.207
+                2.39S0 18 0 18h20s.025-3.099-2.119-3.834z" />
+                </svg>
+                <span class="login-panel__button-label">Равшан Джамшутович</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="17" fill="#C5C5C5"
+                  class="login-panel__logout-icon">
+                  <g>
+                    <path d="M21 8.5L12.125 0v6h-6v5h6v6z" />
+                    <path d="M3.106 13.952V3.048c.018-.376.171-1.057
+                   1.01-1.057h5.027V0H4.116C1.938 0 1.112 1.81 1.087 3.027v10.946C1.112 15.189
+                   1.938 17 4.116 17h5.027v-1.99H4.116c-.839 0-.992-.683-1.01-1.058z" />
+                  </g>
+                </svg>
+              </a>
+            </div>
           </li>
-          <li class="login-panel__item">
+          <li class="login-panel__item login-panel__item--account">
             <a href="#" class="login-panel__button login-panel__button--orders">Мои заказы</a>
             <a href="#" class="login-panel__button login-panel__button--account">Личный кабинет</a>
           </li>
@@ -98,8 +119,10 @@
     <div class="wrapper">
       <ul class="breadcrumbs">
         <li class="breadcrumbs__item">
-          <a href="index.html" class="breadcrumbs__link breadcrumbs__link--main">Главная
-            <!--Иконка вместо текста--></a>
+          <a href="index.html" class="breadcrumbs__link breadcrumbs__link--main">
+            <span class="visually-hidden">Главная</span>
+            <!--Иконка вместо текста-->
+          </a>
         </li>
         <li class="breadcrumbs__item">
           <a href="catalog.html" class="breadcrumbs__link">Каталог</a>
@@ -201,12 +224,20 @@
                 <a href="#" class="sort__link">По функционалу</a>
               </li>
               <li class="sort__item sort__item--ascend">
-                <a href="#" class="sort__link sort__link--ascending">По возрастанию</a>
-                <!--Иконка-->
+                <a href="#" class="sort__link sort__link--ascending sort__link--active">
+                  <span class="visually-hidden">По возрастанию</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10">
+                    <path fill="#C5C5C5" d="M5.5 0L0 10h11z" />
+                  </svg>
+                </a>
               </li>
               <li class="sort__item sort__item--descend">
-                <a href="#" class="sort__link sort__link--descending">По убыванию</a>
-                <!--Иконка-->
+                <a href="#" class="sort__link sort__link--descending">
+                  <span class="visually-hidden">По убыванию</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10">
+                    <path fill="#C5C5C5" d="M5.5 10L0 0h11" />
+                  </svg>
+                </a>
               </li>
             </ul>
           </section>
@@ -219,8 +250,10 @@
                     alt="Перфоратор BOSCH BFG 3000">
                 </a>
 
-                <a href="#" class="products-list__button products-list__button--buy">Купить</a>
-                <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+                <div class="products-list__button-group">
+                  <a href="#" class="products-list__button products-list__button--buy">Купить</a>
+                  <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+                </div>
 
                 <h3 class="products-list__product-title">
                   <a href="#" class="products-list__product-link">
@@ -237,8 +270,10 @@
                     alt="Перфоратор BOSCH BFG 6000">
                 </a>
 
-                <a href="#" class="products-list__button products-list__button--buy">Купить</a>
-                <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+                <div class="products-list__button-group">
+                  <a href="#" class="products-list__button products-list__button--buy">Купить</a>
+                  <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+                </div>
 
                 <h3 class="products-list__product-title">
                   <a href="#" class="products-list__product-link">
@@ -249,14 +284,16 @@
                 <span class="products-list__price products-list__price--old">30500 &#8381;</span>
                 <span class="products-list__price">25500 &#8381;</span>
               </li>
-              <li class="products-list__item" tabindex="0">
+              <li class="products-list__item products-list__item--new" tabindex="0">
                 <a href="#" class="products-list__image-link">
                   <img src="img/bosch_bfg_2000.jpg" class="products-list__image" width="218" height="170"
                     alt="Перфоратор BOSCH BFG 2000">
                 </a>
 
-                <a href="#" class="products-list__button products-list__button--buy">Купить</a>
-                <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+                <div class="products-list__button-group">
+                  <a href="#" class="products-list__button products-list__button--buy">Купить</a>
+                  <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+                </div>
 
                 <h3 class="products-list__product-title">
                   <a href="#" class="products-list__product-link">
@@ -264,7 +301,7 @@
                   </a>
                 </h3>
 
-                <span class="products-list__price products-list__price--old is-hidden">12500 &#8381;</span>
+                <span class="products-list__price products-list__price--old"></span>
                 <span class="products-list__price">12500 &#8381;</span>
               </li>
               <li class="products-list__item" tabindex="0">
@@ -273,8 +310,10 @@
                     alt="Перфоратор BOSCH BFG 3000">
                 </a>
 
-                <a href="#" class="products-list__button products-list__button--buy">Купить</a>
-                <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+                <div class="products-list__button-group">
+                  <a href="#" class="products-list__button products-list__button--buy">Купить</a>
+                  <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+                </div>
 
                 <h3 class="products-list__product-title">
                   <a href="#" class="products-list__product-link">
@@ -285,14 +324,16 @@
                 <span class="products-list__price products-list__price--old">22500 &#8381;</span>
                 <span class="products-list__price">15500 &#8381;</span>
               </li>
-              <li class="products-list__item" tabindex="0">
+              <li class="products-list__item products-list__item--new" tabindex="0">
                 <a href="#" class="products-list__image-link">
                   <img src="img/bosch_bfg_6000.jpg" class="products-list__image" width="218" height="170"
                     alt="Перфоратор BOSCH BFG 6000">
                 </a>
 
-                <a href="#" class="products-list__button products-list__button--buy">Купить</a>
-                <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+                <div class="products-list__button-group">
+                  <a href="#" class="products-list__button products-list__button--buy">Купить</a>
+                  <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+                </div>
 
                 <h3 class="products-list__product-title">
                   <a href="#" class="products-list__product-link">
@@ -309,8 +350,10 @@
                     alt="Перфоратор BOSCH BFG 2000">
                 </a>
 
-                <a href="#" class="products-list__button products-list__button--buy">Купить</a>
-                <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+                <div class="products-list__button-group">
+                  <a href="#" class="products-list__button products-list__button--buy">Купить</a>
+                  <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+                </div>
 
                 <h3 class="products-list__product-title">
                   <a href="#" class="products-list__product-link">
@@ -318,17 +361,19 @@
                   </a>
                 </h3>
 
-                <span class="products-list__price products-list__price--old hidden">12500 &#8381;</span>
+                <span class="products-list__price products-list__price--old"></span>
                 <span class="products-list__price">12500 &#8381;</span>
               </li>
-              <li class="products-list__item" tabindex="0">
+              <li class="products-list__item products-list__item--new" tabindex="0">
                 <a href="#" class="products-list__image-link">
                   <img src="img/bosch_bfg_3000.jpg" class="products-list__image" width="218" height="170"
                     alt="Перфоратор BOSCH BFG 3000">
                 </a>
 
-                <a href="#" class="products-list__button products-list__button--buy">Купить</a>
-                <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+                <div class="products-list__button-group">
+                  <a href="#" class="products-list__button products-list__button--buy">Купить</a>
+                  <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+                </div>
 
                 <h3 class="products-list__product-title">
                   <a href="#" class="products-list__product-link">
@@ -345,8 +390,10 @@
                     alt="Перфоратор BOSCH BFG 6000">
                 </a>
 
-                <a href="#" class="products-list__button products-list__button--buy">Купить</a>
-                <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+                <div class="products-list__button-group">
+                  <a href="#" class="products-list__button products-list__button--buy">Купить</a>
+                  <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+                </div>
 
                 <h3 class="products-list__product-title">
                   <a href="#" class="products-list__product-link">
@@ -363,8 +410,10 @@
                     alt="Перфоратор BOSCH BFG 2000">
                 </a>
 
-                <a href="#" class="products-list__button products-list__button--buy">Купить</a>
-                <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+                <div class="products-list__button-group">
+                  <a href="#" class="products-list__button products-list__button--buy">Купить</a>
+                  <a href="#" class="products-list__button products-list__button--to-bookmarks">В закладки</a>
+                </div>
 
                 <h3 class="products-list__product-title">
                   <a href="#" class="products-list__product-link">
@@ -372,7 +421,7 @@
                   </a>
                 </h3>
 
-                <span class="products-list__price products-list__price--old hidden">12500 &#8381;</span>
+                <span class="products-list__price products-list__price--old"></span>
                 <span class="products-list__price">12500 &#8381;</span>
               </li>
             </ul>
@@ -483,13 +532,12 @@
     </section>
   </footer>
 
-  <section class="modal modal--add-to-cart is-hidden">
+  <section class="modal modal--add-to-cart" hidden>
     <h2 class="modal__title">Товар добавлен в корзину!</h2>
     <a href="#" class="modal__button modal__button--finish-order">Оформить заказ</a>
     <button type="button" class="modal__button modal__button--continue">Продолжить
       покупки</button>
     <button type="button" class="modal_button modal__button--close">
-      <img src="img/popup-close.svg" alt="Закрыть окно">
     </button>
   </section>
 
