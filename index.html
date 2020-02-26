@@ -94,7 +94,7 @@
       <nav class="main-menu" aria-label="Главное меню">
         <ul class="main-menu__list">
           <li class="main-menu__item">
-            <a href="index.html" class="main-menu__link">Главная</a>
+            <a href="index.html" class="main-menu__link main-menu__link--active">Главная</a>
           </li>
           <li class="main-menu__item">
             <a href="#" class="main-menu__link">Компания</a>
@@ -351,14 +351,14 @@
             </li>
           </ul>
           <ul class="services-description">
-            <li class="services-description__item services-description__item--delivery">
+            <li class="services-description__item services-description__item--delivery services-description__item--show">
               <h3 class="services-description__title">Доставка</h3>
               <p class="services-description__text">Мы с удовольствием доставим ваш товар прямо <br>
                 к вашему подъезду совершенно бесплатно! <br>
                 Ведь мы неплохо заработаем, <br>
                 поднимая его на ваш этаж!</p>
             </li>
-            <li class="services-description__item services-description__item--guarantee" hidden>
+            <li class="services-description__item services-description__item--guarantee">
               <h3 class="services-description__title">Гарантия</h3>
               <p class="services-description__text">Если купленный у нас товар поломается или заискрит, <br>
                 а также в случае пожара, спровоцированного его возгоранием, <br>
@@ -366,7 +366,7 @@
                 сгоревший товар на новый. <br>
                 Дом уж восстановите как-нибудь сами.</p>
             </li>
-            <li class="services-description__item services-description__item--credit" hidden>
+            <li class="services-description__item services-description__item--credit">
               <h3 class="services-description__title">Кредит</h3>
               <p class="services-description__text">Залезть в долговую яму стало проще! <br>
                 Кредитные консультанты придут вам на помощь.</p>
@@ -478,8 +478,8 @@
     </section>
   </footer>
 
-  <section class="modal modal--contact-us" hidden>
-    <form method="POST" action="" class="contact-us-form">
+  <section class="modal modal--contact-us">
+    <form method="POST" action="echo.htmlacademy.ru" class="contact-us-form">
       <div class="contact-us-form__group">
         <p class="contact-us-form__item">
           <label for="contact-us-form__username" class="contact-us-form__username-label">Ваше имя:</label>
@@ -499,18 +499,34 @@
       <button type="submit" class="contact-us-form__button contact-us-form__button--submit">Отправить</button>
     </form>
     <button type="button" class="modal__button modal__button--close">
-      <img src="img/popup-close.svg" alt="Закрыть окно">
+      <!-- <img src="img/popup-close.svg" alt="Закрыть окно"> -->
     </button>
   </section>
 
-  <section class="modal modal--our-location" hidden>
+  <section class="modal modal--our-location">
     <h2 class="modal__title visually-hidden">Как до нас добраться</h2>
+    <div id="map"></div>
     <img src="img/map-popup.png" class="modal__map-image" width="940" height="446"
       alt="Мы находимся по адресу: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8">
-    <button type="button" class="modal_button modal__button--close">
-      <img src="img/popup-close.svg" alt="Закрыть окно">
+
+    <button type="button" class="modal__button modal__button--close">
+      <!-- <img src="img/popup-close.svg" alt="Закрыть окно"> -->
     </button>
   </section>
+
+  <section class="modal modal--add-to-cart" hidden>
+    <h2 class="modal__title">Товар добавлен в корзину!</h2>
+    <a href="#" class="modal__button modal__button--finish-order">Оформить заказ</a>
+    <button type="button" class="modal__button modal__button--continue">Продолжить
+      покупки</button>
+    <button type="button" class="modal_button modal__button--close">
+      <!-- <img src="img/popup-close.svg" alt="Закрыть окно"> -->
+    </button>
+  </section>
+
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=557d7e10-7a17-45e0-aec3-d851af85ae59" type="text/javascript"></script>
+  <script src="js/map_api.js" type="text/javascript"></script>
+  <script src="js/script.js" type="text/javascript"></script>
 </body>
 
 </html>

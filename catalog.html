@@ -97,7 +97,7 @@
             <a href="#" class="main-menu__link">Компания</a>
           </li>
           <li class="main-menu__item">
-            <a href="catalog.html" class="main-menu__link">Каталог</a>
+            <a href="catalog.html" class="main-menu__link main-menu__link--active">Каталог</a>
           </li>
           <li class="main-menu__item">
             <a href="#" class="main-menu__link">Новости</a>
@@ -142,23 +142,27 @@
             <fieldset class="filter-cost">
               <legend class="filter-cost__title">Цена:</legend>
               <div class="filter-cost__range">
-                <div class="filter-cost__scale">
+                <div class="filter-cost__range-wrapper">
                   <button type="button" class="filter-cost__cursor filter-cost__cursor--min">
-                    <img src="img/filter-button.svg" alt="Минимальная цена">
+                    <img src="img/filter-button.svg" width="20" height="22" alt="Минимальная цена">
                   </button>
-                  <div class="filter-cost__scale-bar"></div>
+                  <div class="filter-cost__scale">
+                    <div class="filter-cost__scale filter-cost__scale--progress"></div>
+                  </div>
                   <button type="button" class="filter-cost__cursor filter-cost__cursor--max">
-                    <img src="img/filter-button.svg" alt="Максимальная цена">
+                    <img src="img/filter-button.svg" width="20" height="22" alt="Максимальная цена">
                   </button>
                 </div>
               </div>
-              <label for="filter-min-cost" class="filter-cost__label visually-hidden">Минимальная цена</label>
-              <input type="number" name="min-cost" id="filter-min-cost"
-                class="filter-cost__value filter-cost__value--min" value="0">
-              <span class="filter-cost__separator">-</span>
-              <label for="filter-max-cost" class="filter-cost__label visually-hidden">Максимальная цена</label>
-              <input type="number" name="max-cost" id="filter-max-cost"
-                class="filter-cost__value filter-cost__value--max" value="0">
+              <div class="container container--cost-values">
+                <label for="filter-min-cost" class="filter-cost__label visually-hidden">Минимальная цена</label>
+                <input type="text" name="min-cost" id="filter-min-cost"
+                  class="filter-cost__value filter-cost__value--min" value="0">
+                <span class="filter-cost__separator"></span>
+                <label for="filter-max-cost" class="filter-cost__label visually-hidden">Максимальная цена</label>
+                <input type="text" name="max-cost" id="filter-max-cost"
+                  class="filter-cost__value filter-cost__value--max" value="0">
+              </div>
             </fieldset>
             <!--ПО ПРОИЗВОДИТЕЛЯМ-->
             <fieldset class="filter-manufacture">
@@ -541,6 +545,7 @@
     </button>
   </section>
 
+  <script src="js/script.js"></script>
 </body>
 
 </html>
