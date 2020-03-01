@@ -48,23 +48,26 @@ function contact_us_init(contact_us_block) {
   var comment = contact_us_block.querySelector(".contact-us-form__comment");
   var contact_us_submit = contact_us_block.querySelector(".contact-us-form__button--submit");
 
-  var isLocalStorageSupport = true;
-  var name = "";
-
-  try {
-    name = localStorage.getItem("name");
-  } catch (error) {
-    isLocalStorageSupport = false;
-  }
-
   if (callback_button) {
+    var isLocalStorageSupport = true;
+    var name = null;
+    var mail = null;
+
+    try {
+      name = localStorage.getItem("name");
+      mail = localStorage.getItem("email");
+    } catch (error) {
+      isLocalStorageSupport = false;
+    }
+
     callback_button.addEventListener("click", function (evt) {
       evt.preventDefault();
       modal_contact_us.classList.add("modal--show");
 
-      if (isLocalStorageSupport && name != "") {
+      if (isLocalStorageSupport && name != null && mail != null) {
         username.value = name;
-        email.focus();
+        email.value = mail;
+        comment.focus();
       } else {
         username.focus();
       }
@@ -101,6 +104,8 @@ function contact_us_init(contact_us_block) {
       evt.preventDefault();
       if (isLocalStorageSupport && username.value && email.value && comment.value) {
         localStorage.setItem("name", username.value);
+        localStorage.setItem("email", email.value);
+
         modal_contact_us.classList.remove("modal--show");
 
         if (username.classList.contains("modal--error")) {
@@ -120,6 +125,7 @@ function contact_us_init(contact_us_block) {
           username.classList.remove("modal--error");
           modal_contact_us.offsetWidth = modal_contact_us.offsetWidth;
           username.classList.add("modal--error");
+          username.focus();
         }
 
         if (!email.value) {
@@ -143,7 +149,7 @@ function contact_us_close(contact_us_block) {
   var username = contact_us_block.querySelector(".contact-us-form__username");
   var email = contact_us_block.querySelector(".contact-us-form__email");
   var comment = contact_us_block.querySelector(".contact-us-form__comment");
-  
+
   contact_us_block.classList.remove("modal--show");
   if (username.classList.contains("modal--error")) {
     username.classList.remove("modal--error");

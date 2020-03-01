@@ -668,6 +668,7 @@ body {
 
 .slider {
   position: relative;
+  overflow: hidden;
 }
 
 .slider-list {
@@ -683,7 +684,24 @@ body {
 }
 
 .slider-list__item {
+  display: none;
+
   color: #ffffff;
+}
+
+@keyframes slide_shown_animation {
+  from {
+    opacity: 30%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+.slider-list__item--show {
+  display: block;
+  animation-name: slide_shown_animation;
+  animation-duration: 1s;
 }
 
 .slider-list__figure {
@@ -769,6 +787,9 @@ body {
 }
 
 .slider__marker-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   padding: 0;
   width: 10px;
@@ -781,8 +802,6 @@ body {
 
 .slider__marker-button--active::after {
   position: absolute;
-  top: 25%;
-  left: 25%;
   content: "";
   width: 6px;
   height: 6px;
