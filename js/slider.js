@@ -29,7 +29,7 @@ for (let i = 0; i < marker_buttons.length; i++) {
     if (active_marker.classList.contains("slider__marker-button--active")) {
       active_marker.classList.remove("slider__marker-button--active");
       evt.target.classList.add("slider__marker-button--active");
-      
+
       clearInterval(slider_interval);
       get_slide(i);
       slider_interval = setInterval(next_slide, 5000);
