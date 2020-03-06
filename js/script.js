@@ -28,13 +28,13 @@ window.addEventListener("keydown", function (evt) {
   if (evt.keyCode === 27) {
     evt.preventDefault();
     if (modal_contact_us && modal_contact_us.classList.contains("modal--show")) {
-      contact_us_close(modal_contact_us);
+      modal_close(modal_contact_us);
     }
     if (modal_map && modal_map.classList.contains("modal--show")) {
-      modal_map.classList.remove("modal--show");
+      modal_close(modal_map);
     }
     if (modal_cart_confirm && modal_cart_confirm.classList.contains("modal--show")) {
-      modal_cart_confirm.classList.remove("modal--show");
+      modal_close(modal_cart_confirm);
     }
   }
 });
@@ -77,21 +77,7 @@ function contact_us_init(contact_us_block) {
   if (contact_us_close_button) {
     contact_us_close_button.addEventListener("click", function (evt) {
       evt.preventDefault();
-      if (modal_contact_us.classList.contains("modal--show")) {
-        modal_contact_us.classList.remove("modal--show");
-
-        if (username.classList.contains("modal--error")) {
-          username.classList.remove("modal--error");
-        }
-
-        if (email.classList.contains("modal--error")) {
-          email.classList.remove("modal--error");
-        }
-
-        if (comment.classList.contains("modal--error")) {
-          comment.classList.remove("modal--error");
-        }
-      }
+      contact_us_close(modal_contact_us);
     });
   }
 
@@ -106,19 +92,7 @@ function contact_us_init(contact_us_block) {
         localStorage.setItem("name", username.value);
         localStorage.setItem("email", email.value);
 
-        modal_contact_us.classList.remove("modal--show");
-
-        if (username.classList.contains("modal--error")) {
-          username.classList.remove("modal--error");
-        }
-
-        if (email.classList.contains("modal--error")) {
-          email.classList.remove("modal--error");
-        }
-
-        if (comment.classList.contains("modal--error")) {
-          comment.classList.remove("modal--error");
-        }
+        contact_us_close(modal_contact_us);
       }
       else {
         if (!username.value) {
@@ -150,7 +124,8 @@ function contact_us_close(contact_us_block) {
   var email = contact_us_block.querySelector(".contact-us-form__email");
   var comment = contact_us_block.querySelector(".contact-us-form__comment");
 
-  contact_us_block.classList.remove("modal--show");
+  modal_close(contact_us_block);
+
   if (username.classList.contains("modal--error")) {
     username.classList.remove("modal--error");
   }
@@ -179,9 +154,7 @@ function map_modal_init(map_block) {
   if (map_close) {
     map_close.addEventListener("click", function (evt) {
       evt.preventDefault();
-      if (map_block.classList.contains("modal--show")) {
-        map_block.classList.remove("modal--show");
-      }
+      modal_close(map_block);
     });
   }
 }
@@ -203,18 +176,14 @@ function cart_confirm_init(cart_confirm_block) {
   if (cart_confirm_close) {
     cart_confirm_close.addEventListener("click", function (evt) {
       evt.preventDefault();
-      if (modal_cart_confirm.classList.contains("modal--show")) {
-        modal_cart_confirm.classList.remove("modal--show");
-      }
+      modal_close(modal_cart_confirm);
     });
   }
 
   if (continue_button) {
     continue_button.addEventListener("click", function (evt) {
       evt.preventDefault();
-      if (modal_cart_confirm.classList.contains("modal--show")) {
-        modal_cart_confirm.classList.remove("modal--show");
-      }
+      modal_close(modal_cart_confirm);
     });
   }
 }
@@ -247,3 +216,16 @@ function services_init(services_block) {
   }
 }
 
+function modal_close(modal_block) {
+
+  modal_block.classList.add("modal--close");
+
+  setTimeout(function () {
+    if (modal_block.classList.contains("modal--show")) {
+      modal_block.classList.remove("modal--show");
+    }
+    if (modal_block.classList.contains("modal--close")) {
+      modal_block.classList.remove("modal--close");
+    }
+  }, 500);
+}

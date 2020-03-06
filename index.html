@@ -4,8 +4,9 @@
 <head>
   <meta charset="utf-8">
   <title>HTML Academy: Техномарт</title>
-  <link
-    href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700|PT+Sans:400,400i,700&display=swap&subset=cyrillic"
+  <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700&display=swap&subset=cyrillic"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap&subset=cyrillic"
     rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
@@ -16,6 +17,7 @@
     <section class="header-top">
       <div class="wrapper">
         <div class="container container--header-top">
+          <h2 class="visually-hidden">Верхнее меню</h2>
           <a href="index.html" class="main-logo">
             <img src="img/Technomart-logo.svg" class="main-logo__img" width="109" height="18" alt="Логотип Техномарт. Интернет-магазин
           строительных материалов и инструментов для ремонта">
@@ -30,7 +32,6 @@
                     4.467 2 7.5 2 10.532 2 13 4.467 13 7.5c0 3.032-2.468 5.5-5.5 5.5A5.506 5.506 0 012 7.5z" />
               </svg>
             </label>
-            <button type="submit" class="search-form__button search-form__button--submit visually-hidden"></button>
           </form>
           <ul class="top-menu">
             <li class="top-menu__item">
@@ -135,7 +136,7 @@
     <div class="wrapper">
       <section class="promo">
         <h2 class="visually-hidden">Промо-блоки товаров</h2>
-        <ul class="promo-cards  container container--promo" aria-label="Промо-блоки товаров">
+        <ul class="promo-cards  container container--promo">
           <li class="promo-cards__item promo-cards__item--materials">
             <h2 class="promo-cards__title">Материалы</h2>
             <a href="#" class="promo-cards__button">На любой вкус</a>
@@ -220,7 +221,7 @@
 
             <h3 class="products-list__product-title">
               <a href="#" class="products-list__product-link">
-                <p class="products-list__product-name">Перфоратор BOSCH <br> BFG 9000</p>
+                <span class="products-list__product-name">Перфоратор BOSCH <br> BFG 9000</span>
               </a>
             </h3>
 
@@ -240,7 +241,7 @@
 
             <h3 class="products-list__product-title">
               <a href="#" class="products-list__product-link">
-                <p class="products-list__product-name">Перфоратор BOSCH <br> BFG 3000</p>
+                <span class="products-list__product-name">Перфоратор BOSCH <br> BFG 3000</span>
               </a>
             </h3>
 
@@ -260,7 +261,7 @@
 
             <h3 class="products-list__product-title">
               <a href="#" class="products-list__product-link">
-                <p class="products-list__product-name">Перфоратор BOSCH <br> BFG 6000</p>
+                <span class="products-list__product-name">Перфоратор BOSCH <br> BFG 6000</span>
               </a>
             </h3>
 
@@ -280,13 +281,14 @@
 
             <h3 class="products-list__product-title">
               <a href="#" class="products-list__product-link">
-                <p class="products-list__product-name">Перфоратор BOSCH <br> BFG 2000</p>
+                <span class="products-list__product-name">Перфоратор BOSCH <br> BFG 2000</span>
               </a>
             </h3>
 
             <span class="products-list__price products-list__price--old"></span>
             <span class="products-list__price">12500 Р.</span>
           </li>
+        </ul>
       </section>
       <section class="manufacturers">
         <div class="manufacturers__title-container">
@@ -485,6 +487,7 @@
   </footer>
 
   <section class="modal modal--contact-us">
+    <h2 class="modal__title visually-hidden">Обратная связь</h2>
     <form method="POST" action="echo.htmlacademy.ru" class="contact-us-form">
       <div class="contact-us-form__group">
         <p class="contact-us-form__item">
@@ -511,7 +514,7 @@
 
   <section class="modal modal--our-location">
     <h2 class="modal__title visually-hidden">Как до нас добраться</h2>
-    <div id="map"></div>
+    <div id="map" class="modal__interactive-map"></div>
     <img src="img/map-popup.png" class="modal__map-image" width="940" height="446"
       alt="Мы находимся по адресу: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8">
 
@@ -530,11 +533,10 @@
     </button>
   </section>
 
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=557d7e10-7a17-45e0-aec3-d851af85ae59"
-    type="text/javascript"></script>
-  <script src="js/map_api.js" type="text/javascript"></script>
-  <script src="js/slider.js" type="text/javascript"></script>
-  <script src="js/script.js" type="text/javascript"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=557d7e10-7a17-45e0-aec3-d851af85ae59"></script>
+  <script src="js/map_api.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>

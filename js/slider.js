@@ -11,32 +11,17 @@ var slider_interval = setInterval(next_slide, SLIDE_SPEED);
 
 next_button.addEventListener("click", function (evt) {
   evt.preventDefault();
-  // clearInterval(slider_interval);
+  clearInterval(slider_interval);
   next_slide();
-  // slider_interval = setInterval(next_slide, SLIDE_SPEED);
+  slider_interval = setInterval(next_slide, SLIDE_SPEED);
 });
 
 previous_button.addEventListener("click", function (evt) {
   evt.preventDefault();
-  // clearInterval(slider_interval);
+  clearInterval(slider_interval);
   previous_slide();
-  // slider_interval = setInterval(next_slide, SLIDE_SPEED);
+  slider_interval = setInterval(next_slide, SLIDE_SPEED);
 });
-
-// for (let i = 0; i < marker_buttons.length; i++) {
-//     marker_buttons[i].addEventListener("click", function (evt) {
-//       evt.preventDefault();
-//       var active_marker = slider.querySelector(".slider__marker-button--active");
-//       if (active_marker != null) {
-//         active_marker.classList.remove("slider__marker-button--active");
-//         evt.target.classList.add("slider__marker-button--active");
-
-//         // clearInterval(slider_interval);
-//         get_slide(i);
-//         // slider_interval = setInterval(next_slide, SLIDE_SPEED);
-//       }
-//     });
-// }
 
 for (var index = 0; index < marker_buttons.length; index++) {
   marker_buttons[index].addEventListener('click', clickHandler.bind(null, index));
@@ -47,7 +32,7 @@ function clickHandler(index, evt) {
   var is_active = evt.target.classList.contains("slider__marker-button--active");
   if (is_active) {
     clearInterval(slider_interval);
-    //slider_interval = setInterval(next_slide, SLIDE_SPEED);
+    slider_interval = setInterval(next_slide, SLIDE_SPEED);
     return false;
   }
 

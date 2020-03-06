@@ -80,6 +80,7 @@ body {
   position: relative;
 
   display: inline-block;
+  vertical-align: middle;
   width: 220px;
   padding-top: 13px;
   padding-bottom: 7px;
@@ -455,29 +456,40 @@ body {
   padding-top: 12px;
 }
 
-.login-panel__logout-group {
+.login-panel__item--logout {
   display: flex;
   justify-content: space-between;
+  width: 300px;
 
   background-color: #ffffff;
 }
 
-.login-panel__button--logout .login-panel__button-label {
-  margin-right: 35px;
+.login-panel__button--profile .login-panel__button-label {
   margin-left: 13px;
 }
 
-.login-panel__button--logout {
-  width: 300px;
+.login-panel__button--profile {
+  margin-left: 15px;
+  margin-right: 36px;
   padding-top: 12px;
   padding-bottom: 11px;
-  padding-left: 15px;
-  padding-right: 10px;
 
   font-size: 21px;
   line-height: 21px;
 
   background-color: #ffffff;
+}
+
+.login-panel__button--profile:hover path {
+  fill: #32425c;
+}
+
+.login-panel__button--profile:active path {
+  fill: #c5c5c5;
+}
+
+.login-panel__button--logout {
+  margin-right: 9px;
 }
 
 .login-panel__button--logout:hover path {
@@ -516,6 +528,7 @@ body {
 .login-panel__button--orders,
 .login-panel__button--account {
   display: inline-block;
+  vertical-align: middle;
   margin-top: 8px;
 
   font-size: 16px;
@@ -641,6 +654,7 @@ body {
 
 .promo-cards__button {
   display: inline-block;
+  vertical-align: middle;
   margin-top: 13px;
   margin-left: 25px;
   padding-top: 10px;
@@ -779,19 +793,24 @@ body {
 .slider-list__item--show {
   display: block;
 
-  animation-name: slide_shown_animation;
-  animation-duration: 1s;
+  /* animation-name: slide_shown_animation;
+  animation-duration: 1s; */
 }
 
 .slider-list__figure {
   position: relative;
 
+  min-height: 266px;
   margin: 0;
   padding: 0;
+
+  background-color: #c4b59b;
 }
 
 .slider__image {
   display: block;
+
+  color: #000000;
 }
 
 .slider-list__title {
@@ -917,6 +936,8 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+
+  cursor: pointer;
 }
 
 .slider__button--previous {
@@ -972,6 +993,7 @@ body {
 
 .products__button {
   display: inline-block;
+  vertical-align: middle;
   margin-right: 24px;
   padding: 10px 55px;
 
@@ -1026,6 +1048,7 @@ body {
 
 .manufacturers__button {
   display: inline-block;
+  vertical-align: middle;
   margin-right: 24px;
   padding: 10px 69px;
 
@@ -1091,7 +1114,8 @@ body {
   box-shadow: 0 10px 25px 0 rgba(41, 52, 73, 0.5);
 }
 
-.manufacturers-list__image-link:active { /* for IE */
+.manufacturers-list__image-link:active {
+  /* for IE */
   -webkit-box-shadow: 0 4px 10px 0 rgba(41, 52, 73, 0.5);
   box-shadow: 0 4px 10px 0 rgba(41, 52, 73, 0.5);
 }
@@ -1206,6 +1230,8 @@ body {
   border-top: 1px solid #405069;
   border-bottom: 1px solid #293449;
   background-color: #32425c;
+
+  cursor: pointer;
 }
 
 .services-list__button--active {
@@ -1264,8 +1290,8 @@ body {
 .services-description__item--show {
   display: block;
 
-  animation-name: description-show;
-  animation-duration: 0.9s;
+  /* animation-name: description-show;
+  animation-duration: 0.9s; */
 }
 
 .services-description__item--delivery {
@@ -1325,6 +1351,7 @@ body {
 
 .services-description__button {
   display: inline-block;
+  vertical-align: middle;
   padding: 14px 44px;
 
   color: #ffffff;
@@ -1428,6 +1455,7 @@ body {
 
 .about-company__details-button {
   display: inline-block;
+  vertical-align: middle;
   padding-top: 10px;
   padding-right: 40px;
   padding-bottom: 9px;
@@ -1758,30 +1786,25 @@ body {
 }
 
 /* Modals */
-
-.modal {
-  /* position: relative; */
-  position: fixed;
-
-
-  bottom: 50%;
-  transform: translateY(50%);
-
-  display: none;
-
-  background-color: #ffffff;
-}
-
 @keyframes modal-show-animation {
   from {
-    /* transform: translateY(250px); */
     bottom: 0%;
     opacity: 0;
   }
   to {
-    /* transform: translateY(0px); */
     bottom: 50%;
     opacity: 1;
+  }
+}
+
+@keyframes modal-close-animation {
+  from {
+    bottom: 50%;
+    opacity: 1;
+  }
+  to {
+    bottom: 0%;
+    opacity: 0;
   }
 }
 
@@ -1794,11 +1817,28 @@ body {
   }
 }
 
+.modal {
+  position: fixed;
+
+  bottom: 50%;
+  transform: translateY(50%);
+
+  display: none;
+
+  background-color: #ffffff;
+
+}
+
 .modal--show {
   display: block;
 
   animation-name: modal-show-animation;
   animation-duration: 0.8s;
+}
+
+.modal--close {
+  animation-name: modal-close-animation;
+  animation-duration: 0.5s;
 }
 
 .modal--error {
@@ -1950,7 +1990,7 @@ body {
   box-shadow: 0 0 16px 8px rgba(47, 42, 43, 0.5);
 }
 
-#map {
+.modal__interactive-map {
   position: relative;
   z-index: 1;
 
@@ -1997,7 +2037,7 @@ body {
 
   position: absolute;
   top: 9px;
-  right: 0;
+  right: -3px;
 
   height: 4px;
   width: 28px;
@@ -2308,6 +2348,8 @@ body {
 
   border: none;
   background-color: transparent;
+
+  cursor: pointer;
 }
 
 .filter-cost__cursor--max {
@@ -2409,6 +2451,8 @@ body {
   display: flex;
   align-items: center;
   padding-left: 35px;
+
+  cursor: pointer;
 }
 
 .filter-manufacture__input:checked + .filter-manufacture__label::before {
@@ -2503,6 +2547,8 @@ body {
   display: flex;
   align-items: center;
   padding-left: 35px;
+
+  cursor: pointer;
 }
 
 .filter-power-type__input {
@@ -2590,6 +2636,8 @@ body {
   border: 1px solid #e5e5e5;
   border-radius: 3px;
   background-color: #ffffff;
+
+  cursor: pointer;
 }
 
 .filters__button:hover {
@@ -2766,7 +2814,8 @@ body {
   visibility: hidden;
 }
 
-.products-list__item:focus .products-list__image { /* For IE */
+.products-list__item:focus .products-list__image {
+  /* For IE */
   visibility: hidden;
 }
 
@@ -2780,7 +2829,8 @@ body {
   box-shadow: 0px 10px 25px 0px rgba(41, 52, 73, 0.5);
 }
 
-.products-list__item:focus { /* For IE */
+.products-list__item:focus {
+  /* For IE */
   -webkit-box-shadow: 0px 10px 25px 0px rgba(41, 52, 73, 0.5);
   box-shadow: 0px 10px 25px 0px rgba(41, 52, 73, 0.5);
 }
@@ -2793,7 +2843,8 @@ body {
   display: block;
 }
 
-.products-list__item:focus .products-list__button-group { /* For IE */
+.products-list__item:focus .products-list__button-group {
+  /* For IE */
   display: block;
 }
 
@@ -2908,14 +2959,15 @@ body {
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
+  text-align: center;
 }
 
 .products-list__product-name {
+  display: block;
   margin: 0;
   padding: 0;
   padding-top: 5px;
 
-  text-align: center;
   color: #000000;
 }
 
@@ -2933,7 +2985,7 @@ body {
   line-height: 18px;
   color: #ffffff;
 
-  background-image: url(../img/cost-button.svg);
+  background-image: url("../img/cost-button.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
