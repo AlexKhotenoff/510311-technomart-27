@@ -10,7 +10,7 @@ if (modal_contact_us) {
 
 //Map
 if (modal_map) {
-  map_init(modal_map);
+  map_modal_init(modal_map);
 }
 
 //Add to cart
@@ -164,7 +164,7 @@ function contact_us_close(contact_us_block) {
   }
 }
 
-function map_init(map_block) {
+function map_modal_init(map_block) {
 
   var map_link = document.querySelector(".main-contacts__map-link");
   var map_close = map_block.querySelector(".modal--our-location .modal__button--close");
