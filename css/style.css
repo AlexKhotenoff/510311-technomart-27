@@ -1166,6 +1166,7 @@ body {
 
 .services__title {
   margin: 0;
+  margin-bottom: 25px;
   padding: 0;
   padding-top: 3px;
 
@@ -1178,7 +1179,6 @@ body {
 
 .services__text {
   margin: 0;
-  margin-top: 25px;
   padding: 0;
 
   font-family: "PT Sans", Arial, sans-serif;
@@ -1325,9 +1325,14 @@ body {
   margin-bottom: 29px;
 }
 
+.services-description__content {
+  width: 380px;
+}
+
 .services-description__title {
   margin: 0;
   margin-top: -2px;
+  margin-bottom: 23px;
   padding: 0;
 
   font-size: 36px;
@@ -1339,7 +1344,6 @@ body {
 
 .services-description__text {
   margin: 0;
-  margin-top: 23px;
   padding: 0;
 
   font-family: "PT Sans", Arial, sans-serif;
@@ -1416,6 +1420,11 @@ body {
 }
 
 .about-company__text--last {
+  width: 390px;
+  margin-bottom: 21px;
+}
+
+.about-company p.about-company__text:last-child {
   margin-bottom: 21px;
 }
 
@@ -1510,6 +1519,7 @@ body {
 }
 
 .main-contacts__text {
+  width: 190px;
   margin: 0;
   margin-bottom: 32px;
   padding: 0;
@@ -2956,6 +2966,8 @@ body {
   margin-bottom: 12px;
   padding: 0;
   padding-top: 6px;
+  padding-left: 25px;
+  padding-right: 25px;
 
   font-weight: 700;
   font-size: 18px;
@@ -3091,6 +3103,7 @@ body {
   margin: 0;
   padding: 0;
   padding-top: 25px;
+  padding-right: 20px;
 
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
