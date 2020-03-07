@@ -227,5 +227,5 @@ function modal_close(modal_block) {
     if (modal_block.classList.contains("modal--close")) {
       modal_block.classList.remove("modal--close");
     }
-  }, 500);
+  }, 490);
 }

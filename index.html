@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap&subset=cyrillic"
     rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style-min.css">
 </head>
 
 <body>
@@ -31,6 +31,7 @@
                    15c1.71 0 3.282-.579 4.544-1.542L15.586 17 17 15.586zM2 7.5C2 4.467
                     4.467 2 7.5 2 10.532 2 13 4.467 13 7.5c0 3.032-2.468 5.5-5.5 5.5A5.506 5.506 0 012 7.5z" />
               </svg>
+              <span class="visually-hidden">Поиск по сайту</span>
             </label>
           </form>
           <ul class="top-menu">
@@ -78,26 +79,27 @@
           <li class="login-panel__item">
             <a href="#" class="login-panel__button login-panel__button--sign-up">Регистрация</a>
           </li>
-          <li class="login-panel__item is-hidden">
-            <div class=".login-panel__logout-group">
-              <a href="#" class="login-panel__button login-panel__button--logout">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" class="login-panel__user-icon">
-                  <path fill="#C5C5C5" d="M17.881 14.166c-2.144-.735-4.256-1.666-5.207-2.39-.657-.501-.77-1.618-.517-2.415
+          <li class="login-panel__item login-panel__item--logout is-hidden">
+            <a href="#" class="login-panel__button login-panel__button--profile">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" class="login-panel__user-icon">
+                <path fill="#C5C5C5" d="M17.881 14.166c-2.144-.735-4.256-1.666-5.207-2.39-.657-.501-.77-1.618-.517-2.415
                1.118-.903 1.864-2.477 1.864-4.278C14.021 2.276 12.221 0 10 0S5.979 2.276 5.979 5.083c0 1.801.746 3.374 1.863 4.277.253.798.141 1.915-.517 2.416-.95.724-3.063 1.654-5.207
                 2.39S0 18 0 18h20s.025-3.099-2.119-3.834z" />
-                </svg>
-                <span class="login-panel__button-label">Равшан Джамшутович</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="17" fill="#C5C5C5"
-                  class="login-panel__logout-icon">
-                  <g>
-                    <path d="M21 8.5L12.125 0v6h-6v5h6v6z" />
-                    <path d="M3.106 13.952V3.048c.018-.376.171-1.057
-                   1.01-1.057h5.027V0H4.116C1.938 0 1.112 1.81 1.087 3.027v10.946C1.112 15.189
-                   1.938 17 4.116 17h5.027v-1.99H4.116c-.839 0-.992-.683-1.01-1.058z" />
-                  </g>
-                </svg>
-              </a>
-            </div>
+              </svg>
+              <span class="login-panel__button-label">Равшан Джамшутович</span>
+            </a>
+            <a href="#" class="login-panel__button login-panel__button--logout">
+              <span class="visually-hidden">Выйти из профиля</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="21" height="17" fill="#C5C5C5"
+                class="login-panel__logout-icon">
+                <g>
+                  <path d="M21 8.5L12.125 0v6h-6v5h6v6z" />
+                  <path d="M3.106 13.952V3.048c.018-.376.171-1.057
+                 1.01-1.057h5.027V0H4.116C1.938 0 1.112 1.81 1.087 3.027v10.946C1.112 15.189
+                 1.938 17 4.116 17h5.027v-1.99H4.116c-.839 0-.992-.683-1.01-1.058z" />
+                </g>
+              </svg>
+            </a>
           </li>
           <li class="login-panel__item is-hidden">
             <a href="#" class="login-panel__button login-panel__button--orders">Мои заказы</a>
@@ -209,6 +211,8 @@
         </div>
         <ul class="products-list">
           <li class="products-list__item" tabindex="0">
+            <h2 class="visually-hidden">Карточка товара</h2>
+
             <div class="products-list__image-wrapper">
               <img src="img/bosch_bfg_9000.jpg" class="products-list__image" width="218" height="170"
                 alt="Перфоратор BOSCH BFG 9000">
@@ -229,6 +233,8 @@
             <span class="products-list__price">25500 Р.</span>
           </li>
           <li class="products-list__item" tabindex="0">
+            <h2 class="visually-hidden">Карточка товара</h2>
+
             <div class="products-list__image-wrapper">
               <img src="img/bosch_bfg_3000.jpg" class="products-list__image" width="218" height="170"
                 alt="Перфоратор BOSCH BFG 3000">
@@ -249,6 +255,8 @@
             <span class="products-list__price">15500 Р.</span>
           </li>
           <li class="products-list__item" tabindex="0">
+            <h2 class="visually-hidden">Карточка товара</h2>
+
             <div class="products-list__image-wrapper">
               <img src="img/bosch_bfg_6000.jpg" class="products-list__image" width="218" height="170"
                 alt="Перфоратор BOSCH BFG 6000">
@@ -269,6 +277,8 @@
             <span class="products-list__price">25500 Р.</span>
           </li>
           <li class="products-list__item products-list__item--new" tabindex="0">
+            <h2 class="visually-hidden">Карточка товара</h2>
+
             <div class="products-list__image-wrapper">
               <img src="img/bosch_bfg_2000.jpg" class="products-list__image" width="218" height="170"
                 alt="Перфоратор BOSCH BFG 2000">
@@ -410,7 +420,6 @@
             <img src="img/map.png" class="main-contacts__map-image" width="300" height="158"
               alt="Мы находимся по адресу: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8">
           </a>
-          <!--Интерактивная карта-->
           <a href="#" class="main-contacts__callback-button">Заблудились? Напишите нам!</a>
         </section>
       </div>
@@ -508,7 +517,7 @@
       <button type="submit" class="contact-us-form__button contact-us-form__button--submit">Отправить</button>
     </form>
     <button type="button" class="modal__button modal__button--close">
-      <!-- <img src="img/popup-close.svg" alt="Закрыть окно"> -->
+      <span class="visually-hidden">Закрыть</span>
     </button>
   </section>
 
@@ -519,7 +528,7 @@
       alt="Мы находимся по адресу: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8">
 
     <button type="button" class="modal__button modal__button--close">
-      <!-- <img src="img/popup-close.svg" alt="Закрыть окно"> -->
+      <span class="visually-hidden">Закрыть</span>
     </button>
   </section>
 
@@ -529,14 +538,14 @@
     <button type="button" class="modal__button modal__button--continue">Продолжить
       покупки</button>
     <button type="button" class="modal__button modal__button--close">
-      <!-- <img src="img/popup-close.svg" alt="Закрыть окно"> -->
+      <span class="visually-hidden">Закрыть</span>
     </button>
   </section>
 
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=557d7e10-7a17-45e0-aec3-d851af85ae59"></script>
-  <script src="js/map_api.js"></script>
-  <script src="js/slider.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/map_api-min.js"></script>
+  <script src="js/slider-min.js"></script>
+  <script src="js/script-min.js"></script>
 </body>
 
 </html>
