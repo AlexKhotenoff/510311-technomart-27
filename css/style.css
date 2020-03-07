@@ -1152,7 +1152,7 @@ body {
 
 .services {
   padding-top: 62px;
-  height: 522px;
+  min-height: 522px;
 
   background-color: #f4f8f9;
   overflow: hidden;
