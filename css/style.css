@@ -1596,6 +1596,7 @@ body {
   margin: 0;
   margin-top: 31px;
   padding-left: 3px;
+  padding-right: 6px;
 
   font-size: 18px;
   line-height: 24px;
@@ -1673,6 +1674,7 @@ body {
 }
 
 .footer-callback__copyright {
+  width: 400px;
   margin: 0;
   padding: 0;
   padding-top: 21px;
@@ -1687,8 +1689,8 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  min-width: 132px;
-  margin-left: 162px;
+  min-width: 135px;
+  margin-left: 160px;
   padding: 0;
   padding-top: 3px;
 
@@ -1697,6 +1699,7 @@ body {
 
 .socials__item {
   margin-right: 3px;
+  margin-bottom: 3px;
 }
 
 .socials__link {
@@ -1751,9 +1754,7 @@ body {
   background-color: #293449;
 }
 
-.footer-callback__copyright {
-  width: 228px;
-}
+
 
 .footer-callback__feedback-text {
   margin: 0;

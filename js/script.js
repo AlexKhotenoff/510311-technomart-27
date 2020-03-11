@@ -230,64 +230,83 @@ function modal_close(modal_block) {
   }, 490);
 }
 
-//yandex.maps API
-ymaps.ready(function () {
-  var myMap = new ymaps.Map('map', {
-          center: [59.938635, 30.323118],
-          zoom: 18,
-          controls: ['zoomControl', 'routeButtonControl']
-      }),
+try {
+  //yandex.maps API
+  ymaps.ready(function () {
+    var myMap = new ymaps.Map('map', {
+      center: [59.938635, 30.323118],
+      zoom: 18,
+      controls: ['zoomControl', 'routeButtonControl']
+    }),
 
       MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-          '<div style="color: #9e1708; background-color: #ffffff; border-radius: 5px;' +
-          'padding:5px; font-weight: bold; width: 130px; text-align: left; opacity: 90%">$[properties.iconContent]</div>'
+        '<div style="color: #9e1708; background-color: #ffffff; border-radius: 5px;' +
+        'padding:5px; font-weight: bold; width: 130px; text-align: left; opacity: 90%">$[properties.iconContent]</div>'
       ),
 
       myPlacemarkWithContent = new ymaps.Placemark([59.938635, 30.323118], {
-          iconContent: 'Большая Конюшенная ул., 19',
-          hintContent: 'Большая Конюшенная ул., 19',
+        iconContent: 'Большая Конюшенная ул., 19',
+        hintContent: 'Большая Конюшенная ул., 19',
       }, {
-          iconLayout: 'default#imageWithContent',
-          iconImageHref: 'img/map-marker.png',
-          iconImageSize: [22, 44],
-          iconImageOffset: [-11, -44],
-          iconContentOffset: [28, 22],
-          iconContentLayout: MyIconContentLayout
+        iconLayout: 'default#imageWithContent',
+        iconImageHref: 'img/map-marker.png',
+        iconImageSize: [22, 44],
+        iconImageOffset: [-11, -44],
+        iconContentOffset: [28, 22],
+        iconContentLayout: MyIconContentLayout
       });
 
-  myMap.geoObjects
+    myMap.geoObjects
       .add(myPlacemarkWithContent);
-});
+  });
+}
+catch {
+  console.log("Yandex maps is not defined at this page");
+}
 
 // Slider
 
 var slider = document.querySelector(".slider");
-var slides = slider.querySelectorAll(".slider-list__item");
-var marker_items = slider.querySelectorAll(".slider__markers-item");
-var marker_buttons = slider.querySelectorAll(".slider__marker-button");
-var previous_button = slider.querySelector(".slider__button--previous");
-var next_button = slider.querySelector(".slider__button--next");
+var slides;
+var marker_items;
+var marker_buttons;
+var previous_button;
+var next_button;
+var slider_interval;
+
 var current_slide_index = 1;
 const SLIDE_SPEED = 5000;
 
-var slider_interval = setInterval(next_slide, SLIDE_SPEED);
+if (slider) {
+  slider_init();
+}
 
-next_button.addEventListener("click", function (evt) {
-  evt.preventDefault();
-  clearInterval(slider_interval);
-  next_slide();
+function slider_init () {
+  slides = slider.querySelectorAll(".slider-list__item");
+  marker_items = slider.querySelectorAll(".slider__markers-item");
+  marker_buttons = slider.querySelectorAll(".slider__marker-button");
+  previous_button = slider.querySelector(".slider__button--previous");
+  next_button = slider.querySelector(".slider__button--next");
+
   slider_interval = setInterval(next_slide, SLIDE_SPEED);
-});
 
-previous_button.addEventListener("click", function (evt) {
-  evt.preventDefault();
-  clearInterval(slider_interval);
-  previous_slide();
-  slider_interval = setInterval(next_slide, SLIDE_SPEED);
-});
+  next_button.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    clearInterval(slider_interval);
+    next_slide();
+    slider_interval = setInterval(next_slide, SLIDE_SPEED);
+  });
 
-for (var index = 0; index < marker_buttons.length; index++) {
-  marker_buttons[index].addEventListener("click", clickHandler.bind(null, index));
+  previous_button.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    clearInterval(slider_interval);
+    previous_slide();
+    slider_interval = setInterval(next_slide, SLIDE_SPEED);
+  });
+
+  for (var index = 0; index < marker_buttons.length; index++) {
+    marker_buttons[index].addEventListener("click", clickHandler.bind(null, index));
+  }
 }
 
 function clickHandler(index, evt) {
