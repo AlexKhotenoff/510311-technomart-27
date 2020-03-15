@@ -781,20 +781,8 @@ body {
   color: #ffffff;
 }
 
-@keyframes slide_shown_animation {
-  from {
-    opacity: 0.3;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .slider-list__item--show {
   display: block;
-
-  /* animation-name: slide_shown_animation;
-  animation-duration: 1s; */
 }
 
 .slider-list__figure {
@@ -1276,22 +1264,8 @@ body {
   display: none;
 }
 
-@keyframes description-show {
-  from {
-    transform: translateX(100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0px);
-    opacity: 1;
-  }
-}
-
 .services-description__item--show {
   display: block;
-
-  /* animation-name: description-show;
-  animation-duration: 0.9s; */
 }
 
 .services-description__item--delivery {
